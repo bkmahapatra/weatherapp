@@ -184,30 +184,30 @@ console.log(obb.location.city);
 
 /*locaion*/
 const loca=appbody.querySelector('#location');
-loca.innerHTML=`<div class="ques" id="city">City: ${obb.location.city} </div>
-            <div class="ques" id="region">Region:  ${obb.location.region} </div>
-            <div class="ques" id="country">Country: ${obb.location.country} </div>
-            <div class="ques" id="latlong">lotilongi: ${obb.location.lat+" "+obb.location.long}</div>
-            <div class="ques" id="timezone">timezone: ${obb.location.timezone_id}</div>`;
+loca.innerHTML=`<div class="ques" id="city"><i class="fa-solid fa-location-crosshairs"></i> ${obb.location.city} </div>
+            <div class="ques" id="region"><i class="fa-solid fa-earth-africa"></i> ${obb.location.region} </div>
+            <div class="ques" id="country"><i class="fa-solid fa-flag"></i> ${obb.location.country} </div>
+            <div class="ques" id="latlong"><i class="fa-solid fa-globe"></i> ${obb.location.lat+" "+obb.location.long}</div>
+            <div class="ques" id="timezone"><i class="fa-solid fa-clock"></i> ${obb.location.timezone_id}</div>`;
 
 /*condition*/
 const condi=appbody.querySelector('#condition');
-condi.innerHTML=`<div class="conques" id="temperature">temperature: ${obb.current_observation.condition.temperature}</div>
-            <div class="conques" id="whtext">wheather: ${obb.current_observation.condition.text}</div>`;
+condi.innerHTML=`<div class="conques" id="temperature"><i class="fa-solid fa-temperature-high"></i> ${obb.current_observation.condition.temperature}</div>
+            <div class="conques" id="whtext"><i class="fa-solid fa-cloud-moon"></i> ${obb.current_observation.condition.text}</div>`;
 
 const obser=appbody.querySelector('#observation');
-obser.innerHTML=` <div class="obques" id="wind">wind: ${obb.current_observation.wind.chill}</div>
-            <div class="obques" id="direction">direction: ${obb.current_observation.wind.direction}</div>
-            <div class="obques" id="speed">speed: ${obb.current_observation.wind.speed}</div>`;
+obser.innerHTML=` <div class="obques" id="wind"><i class="fa-solid fa-wind"></i> ${obb.current_observation.wind.chill}</div>
+            <div class="obques" id="direction"><i class="fa-solid fa-location-arrow"></i> ${obb.current_observation.wind.direction}</div>
+            <div class="obques" id="speed"><i class="fa-solid fa-gauge"></i> ${obb.current_observation.wind.speed}</div>`;
 
 const atmo=appbody.querySelector('#atmosphere');
-atmo.innerHTML=`<div class="atques" id="humidity">humidity: ${obb.current_observation.atmosphere.humidity}</div>
-            <div class="atques" id="visibility">visibility: ${obb.current_observation.atmosphere.visibility}</div>
-            <div class="atques" id="pressure">pressure: ${obb.current_observation.atmosphere.pressure}</div>`;
+atmo.innerHTML=`<div class="atques" id="humidity"><i class="fa-solid fa-water"></i> ${obb.current_observation.atmosphere.humidity}</div>
+            <div class="atques" id="visibility"><i class="fa-solid fa-eye"></i> ${obb.current_observation.atmosphere.visibility}</div>
+            <div class="atques" id="pressure"><i class="fa-solid fa-bars-staggered"></i> ${obb.current_observation.atmosphere.pressure}</div>`;
 
 const astro=appbody.querySelector('#astronomy');
-astro.innerHTML=`<div class="astques" id="sunrise">sunrise: ${obb.current_observation.astronomy.sunrise}</div>
-            <div class="astques" id="sunset">sunset: ${obb.current_observation.astronomy.sunset}</div>`
+astro.innerHTML=`<div class="astques" id="sunrise"><i class="fa-solid fa-sun"></i> ${obb.current_observation.astronomy.sunrise}</div>
+            <div class="astques" id="sunset"><i class="fa-solid fa-moon"></i> ${obb.current_observation.astronomy.sunset}</div>`
 }
 
 render();
