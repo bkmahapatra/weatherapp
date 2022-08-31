@@ -152,22 +152,22 @@ const fetchData = (url, opt) => {
 
 ///////////////////////////////////////main
 
-// async function run(pcity='bhubaneswar') {
-//   // const res = await curr_pos();
-//   // curr_lat =  res.coords.latitude; //19.1712;
-//   // curr_long = res.coords.longitude; //83.4163;
+async function run(pcity='bhubaneswar') {
+  // const res = await curr_pos();
+  // curr_lat =  res.coords.latitude; //19.1712;
+  // curr_long = res.coords.longitude; //83.4163;
 
-//   // console.log(curr_lat, curr_long);
+  // console.log(curr_lat, curr_long);
+  
+  const url = `https://yahoo-weather5.p.rapidapi.com/weather?location=${pcity}&format=json&u=c`; //lat=${curr_lat}&long=${curr_long}
+  const data = await fetchData(url, options);
+  obb = data;
 
-//   const url = `hsttps://yahoo-weather5.p.rapidapi.com/weather?location=${pcity}&format=json&u=c`; //lat=${curr_lat}&long=${curr_long}
-//   const data = await fetchData(url, options);
-//   obb = data;
+  render();
+  console.log("finished");
+}
 
-//   render();
-//   console.log("finished");
-// }
-
-// run();
+run();
  
 
 //htmlbody
@@ -178,19 +178,20 @@ const btn = document.getElementById("tap_search");
 btn.addEventListener("click", () => {
   console.log("click");
   run(searchtab.value);
+  searchtab.value="";
 });
 
-const render = () => {
+const render = () => { //<i class="fa-solid fa-flag"></i>
   console.log(obb.location.city);
 
   /*locaion*/
   const loca = appbody.querySelector("#location");
   loca.innerHTML = `<div class="ques tooltip" id="city"><i class="fa-solid fa-location-crosshairs"></i> ${
     obb.location.city
-  } <span class="tooltiptext">City</span>   </div>
-  <div class="ques tooltip" id="country"><i class="fa-solid fa-flag"></i> ${
+  } <span class="tooltiptext">City</span>  </div>
+  <div class="ques tooltip" id="country">( ${
     obb.location.country
-  } <span class="tooltiptext">Country</span>   </div>
+  } )<span class="tooltiptext">Country</span>   </div>
   <div class="ques tooltip" id="latlong"><i class="fa-solid fa-globe"></i>  ${
     obb.location.lat + " / " + obb.location.long
   } <span class="tooltiptext">latitude & longitude</span>  </div>
@@ -204,22 +205,22 @@ const render = () => {
 
   /*condition*/
   const condi = appbody.querySelector("#condition");
-  condi.innerHTML = `<div class="conques tooltip" id="temperature"><i class="fa-solid fa-temperature-high"></i> ${obb.current_observation.condition.temperature} °C <span class="tooltiptext">Temperature</span>  </div>
-            <div class="conques tooltip" id="whtext"><i class="fa-solid fa-cloud-moon"></i> ${obb.current_observation.condition.text} <span class="tooltiptext">Wheather</span>  </div>`;
+  condi.innerHTML = `<div class="conques tooltip" id="whtext"><i class="fa-solid fa-cloud-moon"></i> ${obb.current_observation.condition.text} <span class="tooltiptext">Wheather</span>  </div>
+  <div class="conques tooltip" id="temperature"><i class="fa-solid fa-temperature-high"></i> ${obb.current_observation.condition.temperature} °c <span class="tooltiptext">Temperature</span>  </div>`;
 
   const obser = appbody.querySelector("#observation");
   obser.innerHTML = ` <div class="obques tooltip" id="wind"><i class="fa-solid fa-wind"></i> ${obb.current_observation.wind.chill} <span class="tooltiptext">Wind Chill</span>  </div>
-            <div class="obques tooltip" id="direction"><i class="fa-solid fa-location-arrow"></i> ${obb.current_observation.wind.direction} <span class="tooltiptext">Wind Direction</span>  </div>
-            <div class="obques tooltip" id="speed"><i class="fa-solid fa-gauge"></i> ${obb.current_observation.wind.speed} <span class="tooltiptext">Wind Speed</span>  </div>`;
+            <div class="obques tooltip" id="direction"><i class="fa-solid fa-location-arrow"></i> ${obb.current_observation.wind.direction} ° <span class="tooltiptext">Wind Direction</span>  </div>
+            <div class="obques tooltip" id="speed"><i class="fa-solid fa-gauge"></i> ${obb.current_observation.wind.speed} km/h<span class="tooltiptext">Wind Speed</span>  </div>`;
 
   const atmo = appbody.querySelector("#atmosphere");
-  atmo.innerHTML = `<div class="atques tooltip" id="humidity"><i class="fa-solid fa-water"></i> ${obb.current_observation.atmosphere.humidity} <span class="tooltiptext">Humidity</span>  </div>
-            <div class="atques tooltip" id="visibility"><i class="fa-solid fa-eye"></i> ${obb.current_observation.atmosphere.visibility} <span class="tooltiptext">Visibility</span>  </div>
-            <div class="atques tooltip" id="pressure"><i class="fa-solid fa-bars-staggered"></i> ${obb.current_observation.atmosphere.pressure} <span class="tooltiptext">Pressure</span>  </div>`;
+  atmo.innerHTML = `<div class="atques tooltip" id="humidity"><i class="fa-solid fa-water"></i> ${obb.current_observation.atmosphere.humidity} % <span class="tooltiptext">Humidity</span>  </div>
+            <div class="atques tooltip" id="visibility"><i class="fa-solid fa-eye"></i> ${obb.current_observation.atmosphere.visibility} km<span class="tooltiptext">Visibility</span>  </div>
+            <div class="atques tooltip" id="pressure"><i class="fa-solid fa-bars-staggered"></i> ${obb.current_observation.atmosphere.pressure} bars <span class="tooltiptext">Pressure</span>  </div>`;
 
   const astro = appbody.querySelector("#astronomy");
   astro.innerHTML = `<div class="astques tooltip" id="sunrise"><i class="fa-solid fa-sun"></i> ${obb.current_observation.astronomy.sunrise} <span class="tooltiptext">Sunrise</span>  </div>
             <div class="astques tooltip" id="sunset"><i class="fa-solid fa-moon"></i> ${obb.current_observation.astronomy.sunset} <span class="tooltiptext">Sunset</span>  </div>`;
 };
 
-render();
+//render();
