@@ -1,29 +1,44 @@
 *{
     box-sizing: border-box;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: white;
 }
 
 body{
     margin: 0;
+    background-image: url(..//background.jpg);
 }
-#navibar{
-    background-color: rgb(32, 32, 32);
-    background-attachment: fixed;
-    height: 35px;
+#appbody{
+    background-color: rgba(14, 14, 14, 0.636);
     
 }
-#navibar>a{
+
+
+#navibar{
+    position: static;
+    background-color: rgb(32, 32, 32);
+    background-attachment: fixed;
+    height: 42px;
+    display: block;
+    align-self: center;
+    padding-left: 20px;
+    padding-top: 7px;
+}
+
+#navibar a{
     color: aliceblue;
     text-decoration: none;
-    font-family:'Courier New', Courier, monospace;
-
+    margin-right: 15px;
     padding: 5px;
+    
 }
 
 .boxes{
     margin: 10px;
     padding: 5px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    
     /* flex: 100%; */
 }
 
@@ -34,10 +49,125 @@ body{
 #location{
     float: left;
     display: block;
+    margin-bottom: 20px;
 }
 #condition{
     float: left;
+    margin-top: 20px;
+}
+#condition>div{
+    display: block;
+    margin-top: 10px;
+
 }
 #observation{
     clear: both;
+}
+
+/* seacrh  for slide button*/ 
+.search{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+#scity{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-size: 16px;
+    padding-left: 10px;
+    text-align: center;
+    background-color: transparent;
+    border-color: white;
+    border-style: solid;
+
+    height: 40px;
+    width: 250px;
+    
+}
+#scity:focus-visible {
+    /* main offset and width to hide the focus */
+    outline-offset: 0;  
+    outline-width: 0;
+    
+    background-color: rgba(14, 14, 14, 0.636);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: 3px solid rgb(247, 236, 236);
+    
+
+}
+
+#tap_search{
+    background-color: rgba(54, 255, 155, 0.829);
+    height: 40px;
+    width: 70px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 2px solid white;
+    
+}
+#tap_search:hover{
+    border: 2px solid rgb(5, 4, 4);
+    text-justify: auto;
+}
+#tap_search:active{
+    padding-top: 5px;
+    padding-left: 5px;
+    background-color: rgba(14, 15, 14, 0.829);
+}
+/* tooltip */
+.tooltip{
+   position: relative;
+   display: inline-block;
+   padding-left: 40px;
+}
+
+.tooltip .tooltiptext{
+    visibility: hidden;
+    width: 100px;
+    background-color: rgba(0, 0, 0, 0.801);
+    color: aliceblue;
+    text-align: center;
+    padding: 3px;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-size: small;
+
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+}
+
+#city,#city>i{
+    font-size: 45px;
+}
+#city{
+    padding-left: 25px;
+}
+#latlong{
+    padding-left: 15px;
+}
+
+#observation,#atmosphere,#astronomy{
+           
+}
+
+#latlong{
+    margin-top: 0;
+    padding-top: 0;
+    display: block;
+    padding-left: 40px;
+}
+#country{
+    padding-left: 5px;
+    padding-top: 10px;
+    float: right;
+    
+    
+}
+#timezone{
+    padding-left: 15px;
 }
