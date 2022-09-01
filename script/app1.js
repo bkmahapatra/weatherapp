@@ -1,5 +1,5 @@
 let obb = {
-  location: {
+location: {
     city: "Mumbai",
     region: " OR",
     woeid: 2294941,
@@ -30,7 +30,7 @@ let obb = {
       temperature: 82,
     },
     pubDate: 1661807700,
-  },
+  }, 
   forecasts: [
     {
       day: "Mon",
@@ -151,7 +151,7 @@ const fetchData = (url, opt) => {
 };
 
 ///////////////////////////////////////main
-
+/*
 async function run(pcity='bhubaneswar') {
   // const res = await curr_pos();
   // curr_lat =  res.coords.latitude; //19.1712;
@@ -167,7 +167,8 @@ async function run(pcity='bhubaneswar') {
   console.log("finished");
 }
 
-run();
+run(); 
+*/
  
 
 //htmlbody
@@ -221,6 +222,31 @@ const render = () => { //<i class="fa-solid fa-flag"></i>
   const astro = appbody.querySelector("#astronomy");
   astro.innerHTML = `<div class="astques tooltip" id="sunrise"><i class="fa-solid fa-sun"></i> ${obb.current_observation.astronomy.sunrise} <span class="tooltiptext">Sunrise</span>  </div>
             <div class="astques tooltip" id="sunset"><i class="fa-solid fa-moon"></i> ${obb.current_observation.astronomy.sunset} <span class="tooltiptext">Sunset</span>  </div>`;
+            
+            
+            
+            //forecast
+            const forecastData=document.getElementById("forebody");
+            const tempnode=document.getElementById('temp');
+            
+            
+            
+            obb.forecasts.forEach(data=>{
+              let temp=document.importNode(tempnode.content,true);
+              //console.log(temp.querySelector('#day'))
+              temp.querySelector('#day').textContent=data.day;
+              temp.querySelector('#lowt').textContent=data.low;
+              temp.querySelector('#hight').textContent=data.high               
+              temp.querySelector('#whtext').textContent=data.text;
+              // console.log(data.date)
+              // let alldate=new Date(Date.now())  ;
+              // let date=alldate.getDate()+"/"+(parseInt(alldate.getMonth())+1)+"/"+alldate.getFullYear();
+              // console.log(date);
+              // temp.querySelector('#date').textContent=date;
+              
+              forecastData.append(temp);
+
+            });
 };
 
-//render();
+render();
