@@ -229,16 +229,29 @@ const render = () => { //<i class="fa-solid fa-flag"></i>
             const forecastData=document.getElementById("forebody");
             const tempnode=document.getElementById('temp');
             
-            
+            const whicon=(st)=>{
+              if(st=="Sunny") return 'fa-sun';
+              else if(st=="Mostly Sunny") return 'fa-cloud-sun';
+              else if(st=="Mostly Cloudy") return 'fa-cloud';
+              else if(st=="Cloudy") return 'fa-cloud-cloud';
+              else if(st=="Thunderstorms") return 'fa-cloud-bolt';
+              else if(st=="Scattered Thunderstorms") return 'fa-cloud-sun-rain';
+              else if(st=="Partly Cloudy") return 'fa-cloud-sun';
+              else if(st=="Showers") return "fa-cloud-showers-heavy";
+              else if(st=="Rain") return  "fa-cloud-rain";
+              else return "fa-cloud-moon";
+            }
             
             obb.forecasts.forEach(data=>{
               let temp=document.importNode(tempnode.content,true);
               //console.log(temp.querySelector('#day'))
               temp.querySelector('#day').textContent=data.day;
-              temp.querySelector('#lowt').textContent=data.low;
-              temp.querySelector('#hight').textContent=data.high               
-              temp.querySelector('#whtext').textContent=data.text;
-              // console.log(data.date)
+              temp.querySelector('#lowt').innerHTML=`<i class="fa-solid fa-arrow-down"></i> ${data.low}`;
+              temp.querySelector('#hight').innerHTML=`<i class="fa-solid fa-arrow-down"></i> ${data.high}`;               
+              temp.querySelector('#whtext').innerHTML=`<i class="fa-solid ${whicon(data.text)}"></i> ${data.text}`;
+
+              // temp.querySelector('#whtext').textContent=data.text;
+              // console.log(data.date)   <i class="fa-solid fa-cloud"></i>
               // let alldate=new Date(Date.now())  ;
               // let date=alldate.getDate()+"/"+(parseInt(alldate.getMonth())+1)+"/"+alldate.getFullYear();
               // console.log(date);

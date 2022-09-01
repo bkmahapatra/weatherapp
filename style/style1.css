@@ -196,7 +196,7 @@ body{
 /* forecast */
 #forecastdays{
     flex: 30%;
-    margin: 30px;
+    margin: 35px;
     
 }
 #forebody2{
@@ -214,8 +214,15 @@ body{
     
 }
 #forebody2>#whtext{
-    text-align: center;
+    text-align: left;
+    display: flex;
+   
+
 }
+#whtext>i{
+    padding-right: 5px;
+}
+
 #forebody2>#date{
     text-align: end;
 }
@@ -232,5 +239,6 @@ body{
 #bodies{
     flex: 70%;
 }
+
 
 
