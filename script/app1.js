@@ -247,7 +247,7 @@ const render = () => { //<i class="fa-solid fa-flag"></i>
               //console.log(temp.querySelector('#day'))
               temp.querySelector('#day').textContent=data.day;
               temp.querySelector('#lowt').innerHTML=`<i class="fa-solid fa-arrow-down"></i> ${data.low}`;
-              temp.querySelector('#hight').innerHTML=`<i class="fa-solid fa-arrow-down"></i> ${data.high}`;               
+              temp.querySelector('#hight').innerHTML=`<i class="fa-solid fa-arrow-up"></i> ${data.high}`;               
               temp.querySelector('#whtext').innerHTML=`<i class="fa-solid ${whicon(data.text)}"></i> ${data.text}`;
 
               // temp.querySelector('#whtext').textContent=data.text;
