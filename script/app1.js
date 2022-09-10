@@ -1,127 +1,127 @@
-let obb = {
-location: {
-    city: "Mumbai",
-    region: " OR",
-    woeid: 2294941,
-    country: "India",
-    lat: 20.279961,
-    long: 85.818604,
-    timezone_id: "Asia/Kolkata",
+let obb={
+  "location": {
+    "city": "Bhubaneswar",
+    "region": " OR",
+    "woeid": 2294941,
+    "country": "India",
+    "lat": 20.279961,
+    "long": 85.818604,
+    "timezone_id": "Asia/Kolkata"
   },
-  current_observation: {
-    wind: {
-      chill: 94,
-      direction: 158,
-      speed: 4,
+  "current_observation": {
+    "wind": {
+      "chill": 36,
+      "direction": 90,
+      "speed": 19.2
     },
-    atmosphere: {
-      humidity: 90,
-      visibility: 10,
-      pressure: 29.65,
-      rising: 0,
+    "atmosphere": {
+      "humidity": 95,
+      "visibility": 8.55,
+      "pressure": 999,
+      "rising": 63
     },
-    astronomy: {
-      sunrise: "5:30 am",
-      sunset: "6:4 pm",
+    "astronomy": {
+      "sunrise": "5:33 am",
+      "sunset": "5:54 pm"
     },
-    condition: {
-      code: 33,
-      text: "Mostly Clear",
-      temperature: 82,
+    "condition": {
+      "code": 12,
+      "text": "Rain",
+      "temperature": 28
     },
-    pubDate: 1661807700,
-  }, 
-  forecasts: [
+    "pubDate": 1662811200
+  },
+  "forecasts": [
     {
-      day: "Mon",
-      date: 1661742000,
-      low: 81,
-      high: 91,
-      text: "Thunderstorms",
-      code: 4,
-    },
-    {
-      day: "Tue",
-      date: 1661828400,
-      low: 79,
-      high: 90,
-      text: "Thunderstorms",
-      code: 4,
+      "day": "Sat",
+      "date": 1662778800,
+      "low": 26,
+      "high": 28,
+      "text": "Scattered Thunderstorms",
+      "code": 47
     },
     {
-      day: "Wed",
-      date: 1661914800,
-      low: 79,
-      high: 89,
-      text: "Thunderstorms",
-      code: 4,
+      "day": "Sun",
+      "date": 1662865200,
+      "low": 26,
+      "high": 28,
+      "text": "Scattered Thunderstorms",
+      "code": 47
     },
     {
-      day: "Thu",
-      date: 1662001200,
-      low: 80,
-      high: 89,
-      text: "Thunderstorms",
-      code: 4,
+      "day": "Mon",
+      "date": 1662951600,
+      "low": 26,
+      "high": 29,
+      "text": "Scattered Thunderstorms",
+      "code": 47
     },
     {
-      day: "Fri",
-      date: 1662087600,
-      low: 79,
-      high: 90,
-      text: "Thunderstorms",
-      code: 4,
+      "day": "Tue",
+      "date": 1663038000,
+      "low": 26,
+      "high": 30,
+      "text": "Cloudy",
+      "code": 26
     },
     {
-      day: "Sat",
-      date: 1662174000,
-      low: 80,
-      high: 90,
-      text: "Thunderstorms",
-      code: 4,
+      "day": "Wed",
+      "date": 1663124400,
+      "low": 26,
+      "high": 31,
+      "text": "Thunderstorms",
+      "code": 4
     },
     {
-      day: "Sun",
-      date: 1662260400,
-      low: 80,
-      high: 90,
-      text: "Thunderstorms",
-      code: 4,
+      "day": "Thu",
+      "date": 1663210800,
+      "low": 26,
+      "high": 30,
+      "text": "Thunderstorms",
+      "code": 4
     },
     {
-      day: "Mon",
-      date: 1662346800,
-      low: 80,
-      high: 89,
-      text: "Thunderstorms",
-      code: 4,
+      "day": "Fri",
+      "date": 1663297200,
+      "low": 26,
+      "high": 30,
+      "text": "Thunderstorms",
+      "code": 4
     },
     {
-      day: "Tue",
-      date: 1662433200,
-      low: 78,
-      high: 88,
-      text: "Thunderstorms",
-      code: 4,
+      "day": "Sat",
+      "date": 1663383600,
+      "low": 25,
+      "high": 30,
+      "text": "Thunderstorms",
+      "code": 4
     },
     {
-      day: "Wed",
-      date: 1662519600,
-      low: 78,
-      high: 87,
-      text: "Scattered Thunderstorms",
-      code: 47,
+      "day": "Sun",
+      "date": 1663470000,
+      "low": 25,
+      "high": 29,
+      "text": "Thunderstorms",
+      "code": 4
     },
     {
-      day: "Thu",
-      date: 1662606000,
-      low: 79,
-      high: 85,
-      text: "Scattered Thunderstorms",
-      code: 47,
+      "day": "Mon",
+      "date": 1663556400,
+      "low": 25,
+      "high": 30,
+      "text": "Scattered Thunderstorms",
+      "code": 47
     },
-  ],
-};
+    {
+      "day": "Tue",
+      "date": 1663642800,
+      "low": 25,
+      "high": 30,
+      "text": "Thunderstorms",
+      "code": 4
+    }
+  ]
+}
 //functions
 const options = {
   method: "GET",
@@ -151,7 +151,7 @@ const fetchData = (url, opt) => {
 };
 
 ///////////////////////////////////////main
-/*
+
 async function run(pcity='bhubaneswar') {
   // const res = await curr_pos();
   // curr_lat =  res.coords.latitude; //19.1712;
@@ -168,7 +168,7 @@ async function run(pcity='bhubaneswar') {
 }
 
 run(); 
-*/
+
  
 
 //htmlbody
@@ -243,6 +243,7 @@ const render = () => { //<i class="fa-solid fa-flag"></i>
             }
             
             obb.forecasts.forEach(data=>{
+              
               let temp=document.importNode(tempnode.content,true);
               //console.log(temp.querySelector('#day'))
               temp.querySelector('#day').textContent=data.day;
@@ -258,8 +259,7 @@ const render = () => { //<i class="fa-solid fa-flag"></i>
               // temp.querySelector('#date').textContent=date;
               
               forecastData.append(temp);
-
             });
 };
 
-render();
+//render();
