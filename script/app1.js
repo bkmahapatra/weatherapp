@@ -242,6 +242,17 @@ const render = () => { //<i class="fa-solid fa-flag"></i>
               else return "fa-cloud-moon";
             }
             
+            forecastData.innerHTML=`<div id="foretitle">Forecast</div>
+            <template id="temp">
+            <div id="forebody2">
+                <div id="day" class="forecast">day</div>
+                <div id="lowt" class="forecast">low</div>
+                <div id="hight" class="forecast">high</div>
+                <div id="whtext" class="forecast">Wheather</div>
+                <!-- <div id="date" class="forecast">date</div> -->
+            </div>
+        </template>`;
+
             obb.forecasts.forEach(data=>{
               
               let temp=document.importNode(tempnode.content,true);
